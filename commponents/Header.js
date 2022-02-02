@@ -7,7 +7,7 @@ export default Header = ({ text }) => {
     header: {
       height: 80,
       paddingTop: 38,
-      backgroundColor: "coral",
+      backgroundColor: "blue",
     },
 
     list: {
