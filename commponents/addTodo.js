@@ -1,23 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 
 export default function AddTodos({ submitHandler }) {
   const [text, setText] = useState("");
 
-  const changeHandler = (val) => {
+  const handleSubmit = (val) => {
     setText(val);
+    // setText(null);
   };
+
   return (
     <View style={styles.ViewStyle}>
       <TextInput
         style={styles.input}
         placeholder="Add Todos..."
-        onChangeText={changeHandler}
+        onChangeText={handleSubmit}
       />
       <Button
         style={styles.Button}
-        onPress={() => submitHandler(text)}
+        onPress={() => {
+          submitHandler(text);
+        }}
         title="Add Todo"
         color={"coral"}
       />
