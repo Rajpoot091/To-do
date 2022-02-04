@@ -5,17 +5,17 @@ import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 export default function AddTodos({ submitHandler }) {
   const [text, setText] = useState("");
 
-  const handleSubmit = (val) => {
-    setText(val);
-    // setText(null);
-  };
+  //   const handleSubmit = (val) => {
+  //     setText(val);
+  //     // setText(null);
+  //   };
 
   return (
     <View style={styles.ViewStyle}>
       <TextInput
         style={styles.input}
         placeholder="Add Todos..."
-        onChangeText={handleSubmit}
+        onChangeText={(val) => setText(val)}
       />
       <Button
         style={styles.Button}
